@@ -1,5 +1,11 @@
 import './style.css';
-import { displayToPage } from './functions01';
+import { locationX} from './getCurrentLocation';
+import { searchCity } from './searchCity';
 
-displayToPage()
+const getLocation = document.getElementById('getLocation');
+getLocation.addEventListener('click', locationX);
+
+const submitButton = document.getElementById('submit')
+submitButton.addEventListener('click',searchCity)
+
 
