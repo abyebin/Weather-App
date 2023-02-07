@@ -9,7 +9,7 @@ let searcKeyWord = "";
 
 function searchCity(){
   searcKeyWord = document.getElementById('city').value;
-
+  
 }
 
 //find current location
