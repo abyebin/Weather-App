@@ -1,5 +1,5 @@
 import { apiKey } from './App Id';
-import { toDisplay } from './printOnDisplay';
+import { dataSet,manageData } from './storage ';
 
 let latitudex = 0;
 let longitudex = 0;
@@ -16,8 +16,6 @@ export function locationX() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-export let dataSetg
-
 export async function displayToPage() {
   try {
     const response = await fetch(
@@ -25,10 +23,11 @@ export async function displayToPage() {
       { mode: 'cors' }
     );
     const data = await response.json();
-    dataSetg = data
+    dataSet = data
   } catch (error) {
     console.log(error);
     return error
   }
-  toDisplay()
+  manageData()
+
 }

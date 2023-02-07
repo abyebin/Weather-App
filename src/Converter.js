@@ -18,4 +18,3 @@ function unixToHuman(t){
 var date = new Date(t * 1000);
 return date.toLocaleString();
 }
-

@@ -1,5 +1,5 @@
 import { apiKey } from './App Id';
-import { toDisplay } from './printOnDisplay';
+import { dataSet,manageData } from './storage ';
 
 let searcKeyWord = document.getElementById('city');
 
@@ -10,8 +10,6 @@ export function searchCity() {
   event.preventDefault();
   displayToPage();
 }
-export let dataSets
-
 export async function displayToPage() {
   try {
     const response = await fetch(
@@ -19,11 +17,9 @@ export async function displayToPage() {
       { mode: 'cors' }
     );
     const data = await response.json();
-    dataSets = data
-    return data
+    dataSet = data
   } catch (error) {
     console.error(error);
-    return error
   }
-  toDisplay()
+  manageData()
 }
