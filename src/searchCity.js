@@ -1,11 +1,16 @@
-import { apiKey } from './Apiid';
+import { apiKey } from './App Id';
+import { toDisplay } from './printOnDisplay';
 
 let searcKeyWord = document.getElementById('city');
 
 export function searchCity() {
+  if(searcKeyWord.value === ""){
+    searcKeyWord.value = "Globe"
+  }
   event.preventDefault();
   displayToPage();
 }
+export let dataSets
 
 export async function displayToPage() {
   try {
@@ -14,9 +19,11 @@ export async function displayToPage() {
       { mode: 'cors' }
     );
     const data = await response.json();
-    console.log(data);
+    dataSets = data
+    return data
   } catch (error) {
     console.error(error);
+    return error
   }
+  toDisplay()
 }
-

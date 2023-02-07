@@ -1,7 +1,7 @@
 
-function kelvinToCelcius(k){
+export function kelvinToCelcius(k){
     let celcius = k - 273.15
-    return celcius.toFixed(1)
+    return celcius.toFixed(0)
 }
 
 function kelvinToFahernheit(k){

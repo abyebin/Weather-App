@@ -28,6 +28,7 @@ body{
     gap: 5px;
 }
 #form input{
+    padding: 5px;
     border-radius: 10px;
     border: none;
     width: 90%;
@@ -63,11 +64,29 @@ body{
     background-color: rgba(155, 242, 245,0.3);
     width: 100%;
     padding: 10px;
+    gap: 15px;
 
     display: grid;
     grid-template: 2fr 3fr 1fr/ 1fr 2fr 1fr;
 }
 .items{
-    border: 1px solid red;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.items.temp{
+    font-size: 4rem;
+}
+.mainTempDiv{
+    display: flex;
+}
+.feels-like-div{
+    display: flex;
+    font-size: small;
+    color: rgb(15, 15, 49);
+}
+.items.city{
+    color: azure;
 }
