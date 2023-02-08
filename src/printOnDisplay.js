@@ -40,10 +40,10 @@ export function toDisplay() {
   windgust.innerHTML = `${dataSet.wind.gust} m/s`;
   timezone.innerHTML = convertTimeZone(dataSet.timezone);
   humidity.innerHTML = `Humidity: ${dataSet.main.humidity}%`;
-  utc.innerHTML = `UTC: ${getUTC0()}`;
+  utc.innerHTML = `UTC time: ${getUTC0()}`;
     
   currentdate.innerHTML = new Date().toLocaleDateString();
-  time.innerHTML = timeNOw();
+  time.innerHTML = timeNOw(dataSet.timezone);
 
-  console.log(dataSet);
+  console.log();
 }

@@ -1,4 +1,3 @@
-import { dataSet } from './storage ';
 import { convertTimeZone } from './Converter';
 
 let utcTimeMinutes;
@@ -25,8 +24,6 @@ export function getUTC0() {
   return time;
 }
 
-getUTC0();
-
 function currentTimeInMinutes() {
   let hours = new Date().getHours();
   let minutes = new Date().getMinutes();
@@ -35,17 +32,18 @@ function currentTimeInMinutes() {
   return currentMinutes;
 }
 
-function presentTime() {
+export function timeNOw(timezone) {
   getUTC0();
-  convertTimeZone(dataSet.timezone);
-}
-
-export function timeNOw() {
-  presentTime();
+  convertTimeZone(timezone);
   let timeTotal = cityTime + utcTimeMinutes;
   let hours = Math.floor(timeTotal / 60);
   let minutes = timeTotal % 60;
-
-  let hourFormat = `${hours}:${minutes}`;
+  
+  let ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  
+  let minuteFormat = (minutes < 10) ? `0${minutes}` : `${minutes}`;
+  let hourFormat = `${hours}:${minuteFormat} ${ampm}`;
   return hourFormat;
 }
