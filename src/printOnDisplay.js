@@ -1,7 +1,7 @@
 import { dataSet } from './storage ';
 import { kelvinToCelcius } from './Converter';
 import { unixToHuman, windDi, convertTimeZone } from './Converter';
-import { getUTC0 } from './updateTimeDate';
+import { getUTC0, timeNOw} from './updateTimeDate';
 
 const mainTemp = document.querySelector('.main-temp');
 const feelslike = document.querySelector('.feel');
@@ -40,10 +40,10 @@ export function toDisplay() {
   windgust.innerHTML = `${dataSet.wind.gust} m/s`;
   timezone.innerHTML = convertTimeZone(dataSet.timezone);
   humidity.innerHTML = `Humidity: ${dataSet.main.humidity}%`;
-  // utc.innerHTML = `UTC: ${getUTC0()}`;
-
+  utc.innerHTML = `UTC: ${getUTC0()}`;
+    
   currentdate.innerHTML = new Date().toLocaleDateString();
-  time.innerHTML = new Date().toLocaleTimeString();
+  time.innerHTML = timeNOw();
 
   console.log(dataSet);
 }

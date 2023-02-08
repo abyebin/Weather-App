@@ -1,18 +1,19 @@
+import { cityTime } from "./updateTimeDate";
 
 export function kelvinToCelcius(k){
     let celcius = k - 273.15
     return celcius.toFixed(0)
 }
 
-function kelvinToFahernheit(k){
-    let fahrenheit = (k - 273.15) * 9/5 + 32
-    return fahrenheit.toFixed(1)
-}
+// function kelvinToFahernheit(k){
+//     let fahrenheit = (k - 273.15) * 9/5 + 32
+//     return fahrenheit.toFixed(1)
+// }
 
-function fahrenheiToCelcius(f) {
-    let celcius = (f-32)/1.8;
-    return celcius.toFixed(1)
-}
+// function fahrenheiToCelcius(f) {
+//     let celcius = (f-32)/1.8;
+//     return celcius.toFixed(1)
+// }
 
 export function unixToHuman(t){
 var date = new Date(t * 1000);
@@ -22,11 +23,13 @@ return date.toLocaleTimeString();
 export function convertTimeZone(timezone) {
     let hours = Math.floor(timezone / 3600);
     let minutes = Math.floor((timezone % 3600) / 60);
+
+    cityTime = minutes + (hours*60);
+
     let sign = hours > 0 ? '+' : '-';
     hours = Math.abs(hours);
     return `UTC ${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
   }
-  convertTimeZone()
 
 export function windDi(w){
     if(w >= 0 && w < 30 ){
