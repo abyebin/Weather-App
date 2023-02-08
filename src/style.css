@@ -91,3 +91,7 @@ body{
 .items.city{
     color: azure;
 }
+.time-div .current-time{
+    color: rgb(9, 9, 94);
+    font-size: 2.5rem;
+}
