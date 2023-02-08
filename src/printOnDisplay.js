@@ -1,5 +1,6 @@
 import { dataSet } from './storage ';
 import { kelvinToCelcius } from './Converter';
+import { unixToHuman, windDi,convertTimeZone } from './Converter';
 
 const mainTemp = document.querySelector('.main-temp');
 const feelslike = document.querySelector('.feel');
@@ -11,6 +12,12 @@ const seaLevel = document.querySelector('.seaLevelS');
 const groundLevel = document.querySelector('.grndLvlS');
 const clouds = document.querySelector('.clouds');
 const description = document.querySelector('.description');
+const sunrise = document.querySelector('.sunrise');
+const sunset = document.querySelector('.sunset');
+const windSpeed = document.querySelector('.windS');
+const windDirection = document.querySelector('.deg');
+const windgust = document.querySelector('.gustS');
+const timezone = document.querySelector('.timeZone')
 
 export function toDisplay() {
   mainTemp.innerHTML = kelvinToCelcius(dataSet.main.temp);
@@ -23,6 +30,14 @@ export function toDisplay() {
   groundLevel.innerHTML = dataSet.main.pressure;
   clouds.innerHTML = dataSet.weather[0].main;
   description.innerHTML = dataSet.weather[0].description;
+  sunrise.innerHTML = unixToHuman(dataSet.sys.sunrise);
+  sunset.innerHTML = unixToHuman(dataSet.sys.sunset);
+  windSpeed.innerHTML = `${dataSet.wind.speed} m/s`;
+  windDirection.innerHTML = `${dataSet.wind.deg} &deg; ${windDi(
+    dataSet.wind.deg
+  )}`;
+  windgust.innerHTML = `${dataSet.wind.gust} m/s`;
+  timezone.innerHTML = convertTimeZone(dataSet.timezone)
 
   console.log(dataSet);
 }
