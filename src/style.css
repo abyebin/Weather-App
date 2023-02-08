@@ -8,7 +8,7 @@ body{
 }
 .main-container{
     position: fixed;
-    background: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+    background: url(https://images.unsplash.com/photo-1675576466385-1a2429a4b72c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
     background-size: cover;
     width: 100%;
     min-height: 100vh;
