@@ -24,5 +24,5 @@ export function colorChange() {
 
 export function showdisplay() {
   const homeScreen = document.querySelector('.homeScreen');
-  homeScreen.style.display = "none"
+  homeScreen.style.display = 'none';
 }

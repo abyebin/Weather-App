@@ -1,13 +1,12 @@
 import { apiKey } from './App Id';
-import { dataSet,manageData } from './storage ';
+import { dataSet, manageData } from './storage ';
 import { showdisplay } from './background';
 
 let searcKeyWord = document.getElementById('city');
 
 export function searchCity() {
-  showdisplay()
-  if(searcKeyWord.value === ""){
-    searcKeyWord.value = "Globe"
+  if (searcKeyWord.value === '') {
+    searcKeyWord.value = 'Globe';
   }
   event.preventDefault();
   displayToPage();
@@ -19,9 +18,10 @@ export async function displayToPage() {
       { mode: 'cors' }
     );
     const data = await response.json();
-    dataSet = data
+    dataSet = data;
   } catch (error) {
     console.error(error);
   }
-  manageData()
+  showdisplay();
+  manageData();
 }

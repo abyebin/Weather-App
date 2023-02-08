@@ -10,6 +10,9 @@ getLocation.addEventListener('click', locationX);
 const submitButton = document.getElementById('submit')
 submitButton.addEventListener('click',searchCity)
 
+const clockView = document.querySelector('.homeScreen')
+clockView.addEventListener('click',locationX)
+
 window.onload = clocks()
 
 
