@@ -1,9 +1,11 @@
 import { apiKey } from './App Id';
 import { dataSet,manageData } from './storage ';
+import { showdisplay } from './background';
 
 let searcKeyWord = document.getElementById('city');
 
 export function searchCity() {
+  showdisplay()
   if(searcKeyWord.value === ""){
     searcKeyWord.value = "Globe"
   }

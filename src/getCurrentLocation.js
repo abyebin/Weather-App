@@ -1,5 +1,6 @@
 import { apiKey } from './App Id';
 import { dataSet,manageData } from './storage ';
+import { showdisplay } from './background';
 
 let latitudex = 0;
 let longitudex = 0;
@@ -13,6 +14,7 @@ function showPosition(position) {
 }
 
 export function locationX() {
+  showdisplay()
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
